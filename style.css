@@ -353,3 +353,34 @@ footer{
 @media (max-width:480px){
   .top-btn{right:12px;left:auto;transform:none}
 }
+
+
+.model-buttons button{
+  min-height:58px;
+  border-radius:14px;
+  background:#0b1327;
+  border:1px solid rgba(87,108,176,.18);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:900;
+  font-size:14px;
+  color:#fff;
+  cursor:pointer;
+}
+.model-buttons button.active{
+  background:linear-gradient(180deg,#1547ff 0%,#0b2dc8 100%);
+  border-color:#3154ff;
+  box-shadow:0 10px 20px rgba(18,60,230,.20);
+}
+.car-frame{
+  background:#e5e5e5;
+  min-height:205px;
+  padding:14px;
+}
+.car-frame img{
+  display:block;
+  width:100%;
+  height:220px;
+  object-fit:contain;
+}

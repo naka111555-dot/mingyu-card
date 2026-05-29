@@ -1,11 +1,63 @@
+const modelData = {
+  "DOLPHIN": {
+    image: "assets/dolphin.png",
+    title: "DOLPHIN",
+    desc: "감각적인 디자인과 실용성을 겸비한 소형 해치백"
+  },
+  "ATTO 3": {
+    image: "assets/atto3.png",
+    title: "ATTO 3",
+    desc: "실용성과 공간 활용성이 돋보이는 전기 SUV"
+  },
+  "SEAL": {
+    image: "assets/seal.png",
+    title: "SEAL",
+    desc: "세련된 퍼포먼스와 디자인을 갖춘 전기 세단"
+  },
+  "SEALION 7": {
+    image: "assets/sealion7.png",
+    title: "SEALION 7",
+    desc: "넓은 공간감과 미래지향적 스타일의 전기 SUV"
+  },
+  "SEALION 6": {
+    image: "assets/sealion6.webp",
+    title: "SEALION 6",
+    desc: "균형 잡힌 주행감과 실용성을 갖춘 SUV"
+  }
+};
+
 let selectedYears = 5;
 
-document.querySelectorAll(".period button").forEach((button) => {
-  button.addEventListener("click", () => {
-    document.querySelectorAll(".period button").forEach((b) => b.classList.remove("active"));
-    button.classList.add("active");
+function setModel(modelName) {
+  const data = modelData[modelName];
+  if (!data) return;
+
+  document.getElementById('heroImage').src = data.image;
+  document.getElementById('heroImage').alt = `BYD ${data.title} 차량 이미지`;
+  document.getElementById('heroTitle').textContent = data.title;
+  document.getElementById('heroDesc').textContent = data.desc;
+  const select = document.getElementById('model');
+  if (select) select.value = modelName;
+
+  document.querySelectorAll('.model-btn').forEach((btn) => {
+    btn.classList.toggle('active', btn.dataset.model === modelName);
+  });
+}
+
+document.querySelectorAll('.model-btn').forEach((button) => {
+  button.addEventListener('click', () => setModel(button.dataset.model));
+});
+
+document.querySelectorAll('.period button').forEach((button) => {
+  button.addEventListener('click', () => {
+    document.querySelectorAll('.period button').forEach((b) => b.classList.remove('active'));
+    button.classList.add('active');
     selectedYears = Number(button.dataset.years);
   });
+});
+
+document.getElementById('model')?.addEventListener('change', (e) => {
+  setModel(e.target.value);
 });
 
 function saveContact() {
@@ -21,21 +73,21 @@ ADR:;;경기 성남시 분당구 대왕판교로 322 1층;;;;
 URL:https://blog.naver.com/min-_2628
 END:VCARD`;
 
-  const blob = new Blob([vCard], { type: "text/vcard;charset=utf-8" });
-  const link = document.createElement("a");
+  const blob = new Blob([vCard], { type: 'text/vcard;charset=utf-8' });
+  const link = document.createElement('a');
   link.href = URL.createObjectURL(blob);
-  link.download = "kim-mingyu-contact.vcf";
+  link.download = 'kim-mingyu-contact.vcf';
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
 }
 
 function copyAddress() {
-  const address = "경기 성남시 분당구 대왕판교로 322 1층";
+  const address = '경기 성남시 분당구 대왕판교로 322 1층';
 
   if (navigator.clipboard && window.isSecureContext) {
     navigator.clipboard.writeText(address)
-      .then(() => alert("주소가 복사되었습니다."))
+      .then(() => alert('주소가 복사되었습니다.'))
       .catch(() => fallbackCopy(address));
   } else {
     fallbackCopy(address);
@@ -43,46 +95,46 @@ function copyAddress() {
 }
 
 function fallbackCopy(text) {
-  const textarea = document.createElement("textarea");
+  const textarea = document.createElement('textarea');
   textarea.value = text;
-  textarea.style.position = "fixed";
-  textarea.style.left = "-9999px";
+  textarea.style.position = 'fixed';
+  textarea.style.left = '-9999px';
   document.body.appendChild(textarea);
   textarea.focus();
   textarea.select();
 
   try {
-    document.execCommand("copy");
-    alert("주소가 복사되었습니다.");
+    document.execCommand('copy');
+    alert('주소가 복사되었습니다.');
   } catch (err) {
-    alert("주소 복사에 실패했습니다. 주소: " + text);
+    alert('주소 복사에 실패했습니다. 주소: ' + text);
   }
 
   document.body.removeChild(textarea);
 }
 
 function formatWon(num) {
-  return Math.round(num).toLocaleString("ko-KR") + "원";
+  return Math.round(num).toLocaleString('ko-KR') + '원';
 }
 
 function calculateSaving() {
-  const fuelPrice = Number(document.getElementById("fuelPrice").value);
-  const hybridEff = Number(document.getElementById("hybridEff").value);
-  const yearKm = Number(document.getElementById("yearKm").value);
-  const model = document.getElementById("model").value;
+  const fuelPrice = Number(document.getElementById('fuelPrice').value);
+  const hybridEff = Number(document.getElementById('hybridEff').value);
+  const yearKm = Number(document.getElementById('yearKm').value);
+  const model = document.getElementById('model').value;
 
   if (!fuelPrice || !hybridEff || !yearKm) {
-    alert("값을 모두 입력해주세요.");
+    alert('값을 모두 입력해주세요.');
     return;
   }
 
-  const chargingPrice = 160; // 원/kWh, 계산용 기본값
+  const chargingPrice = 160;
   const evEfficiencyByModel = {
-    "DOLPHIN": 6.2,
-    "ATTO 3": 5.4,
-    "SEAL": 5.8,
-    "SEALION 7": 5.1,
-    "SEALION 6": 5.0
+    'DOLPHIN': 6.2,
+    'ATTO 3': 5.4,
+    'SEAL': 5.8,
+    'SEALION 7': 5.1,
+    'SEALION 6': 5.0
   };
 
   const evEff = evEfficiencyByModel[model];
@@ -98,7 +150,7 @@ function calculateSaving() {
 
   const totalSaving = annualSaving * selectedYears;
 
-  document.getElementById("resultBox").innerHTML = `
+  document.getElementById('resultBox').innerHTML = `
     <strong>${selectedYears}년 기준 예상 절감액</strong><br><br>
     · 하이브리드 예상 연간 연료비: ${formatWon(annualHybridFuelCost)}<br>
     · ${model} 예상 연간 충전비: ${formatWon(annualEvChargingCost)}<br>
@@ -108,8 +160,10 @@ function calculateSaving() {
   `;
 }
 
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker.register("./sw.js").catch(() => {});
+setModel('DOLPHIN');
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js').catch(() => {});
   });
 }

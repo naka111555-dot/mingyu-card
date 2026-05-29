@@ -1,4 +1,4 @@
-const CACHE_NAME = "byd-mingyu-card-v1";
+const CACHE_NAME = "byd-mingyu-card-v2";
 const ASSETS = [
   "./",
   "./index.html",
@@ -7,8 +7,12 @@ const ASSETS = [
   "./manifest.webmanifest",
   "./assets/icon-192.png",
   "./assets/icon-512.png",
-  "./assets/dolphin.svg",
-  "./assets/business-card.png"
+  "./assets/business-card.png",
+  "./assets/dolphin.png",
+  "./assets/atto3.png",
+  "./assets/seal.png",
+  "./assets/sealion7.png",
+  "./assets/sealion6.webp"
 ];
 
 self.addEventListener("install", (event) => {

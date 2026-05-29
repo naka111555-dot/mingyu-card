@@ -51,3 +51,8 @@
 - 디자인 색상과 여백은 `style.css`에서 수정합니다.
 - 명함 이미지는 `assets/business-card.png`를 같은 이름으로 교체하면 됩니다.
 - 차량 이미지는 `assets/dolphin.svg`를 같은 이름으로 교체하면 됩니다.
+
+
+## 추가 수정
+- Vehicle Lineup 버튼을 누르면 상단 차량 이미지와 설명이 모델별로 바뀌도록 수정했습니다.
+- 포함 이미지: DOLPHIN, ATTO 3, SEAL, SEALION 7, SEALION 6
