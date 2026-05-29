@@ -1,37 +1,31 @@
-# BYD 김민규 주임 모바일 명함 페이지 - 바로 업로드용
+# BYD 김민규 주임 모바일 명함
 
-## 중요한 업로드 방법
+이 파일은 처음부터 다시 만든 GitHub Pages용 파일입니다.
 
-이 ZIP은 압축을 풀었을 때 나오는 파일들을 GitHub 저장소 첫 화면에 바로 올리면 됩니다.
+## 업로드 방법
 
-GitHub 저장소 첫 화면에 아래처럼 보여야 합니다.
+1. 이 ZIP 파일을 압축 해제합니다.
+2. 압축 해제한 폴더 안에 있는 파일들을 GitHub 저장소 첫 화면에 업로드합니다.
+3. GitHub 저장소 첫 화면에 아래처럼 보여야 합니다.
 
-- `index.html`
-- `style.css`
-- `script.js`
-- `manifest.webmanifest`
-- `sw.js`
-- `.nojekyll`
-- `assets/`
+- index.html
+- style.css
+- script.js
+- assets/
 
-절대 저장소 첫 화면이 `byd_mingyu_card_root_upload` 폴더 하나만 보이면 안 됩니다.
-그렇게 올리면 GitHub Pages가 기존 `index.html`을 계속 보여줄 수 있습니다.
+## 중요
 
-## 이번 수정 내용
+`byd_card_fresh` 폴더 자체를 올리면 안 됩니다.
+그 폴더 안에 들어있는 파일과 assets 폴더를 올려야 합니다.
 
-- DOLPHIN 버튼 클릭 → DOLPHIN 사진
-- ATTO 3 버튼 클릭 → ATTO 3 사진
-- SEAL 버튼 클릭 → SEAL 사진
-- SEALION 7 버튼 클릭 → SEALION 7 사진
-- SEALION 6 버튼 클릭 → SEALION 6 사진
+## 포함 차량 이미지
 
-차량 버튼은 더 이상 맨 아래 계산기로 이동하지 않고, 상단 차량 사진과 제목을 바꿉니다.
+- assets/dolphin.png
+- assets/atto3.png
+- assets/seal.png
+- assets/sealion7.png
+- assets/sealion6.webp
 
-## 업로드 후에도 예전 화면이 보일 때
+## 작동 방식
 
-사이트 주소 뒤에 `?v=3`을 붙여서 한 번 접속하세요.
-
-예:
-`https://아이디.github.io/저장소이름/?v=3`
-
-핸드폰 홈 화면 아이콘으로 접속 중이면 기존 아이콘을 삭제하고 다시 추가하세요.
+차량 버튼을 누르면 상단 차량 이미지와 차량 이름/설명이 바뀝니다.
