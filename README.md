@@ -1,58 +1,37 @@
-# BYD 김민규 주임 모바일 명함 페이지
+# BYD 김민규 주임 모바일 명함 페이지 - 바로 업로드용
 
-## 포함 파일
-- `index.html` : 메인 페이지
-- `style.css` : 디자인
-- `script.js` : 연락처 저장, 주소 복사, 유지비 계산기 기능
-- `manifest.webmanifest` : 핸드폰에서 앱처럼 추가하기 위한 설정
-- `sw.js` : 간단한 캐시용 service worker
-- `assets/` : 아이콘, 차량 이미지, 명함 이미지
+## 중요한 업로드 방법
 
-## GitHub Pages에 올리는 법
+이 ZIP은 압축을 풀었을 때 나오는 파일들을 GitHub 저장소 첫 화면에 바로 올리면 됩니다.
 
-1. GitHub에서 새 Repository를 만듭니다.
-   - 예: `mingyu-card`
-   - Public으로 만들어도 됩니다.
+GitHub 저장소 첫 화면에 아래처럼 보여야 합니다.
 
-2. 이 압축파일을 풀고 안의 파일들을 전부 업로드합니다.
-   - `index.html`, `style.css`, `script.js`, `manifest.webmanifest`, `sw.js`, `assets` 폴더가 repository 첫 화면에 바로 보여야 합니다.
-   - `byd_mingyu_card` 폴더 자체를 올리는 것이 아니라, 폴더 안 파일들을 올리는 방식이 가장 안전합니다.
+- `index.html`
+- `style.css`
+- `script.js`
+- `manifest.webmanifest`
+- `sw.js`
+- `.nojekyll`
+- `assets/`
 
-3. Repository에서 `Settings` → `Pages`로 이동합니다.
+절대 저장소 첫 화면이 `byd_mingyu_card_root_upload` 폴더 하나만 보이면 안 됩니다.
+그렇게 올리면 GitHub Pages가 기존 `index.html`을 계속 보여줄 수 있습니다.
 
-4. Source를 `Deploy from a branch`로 선택합니다.
+## 이번 수정 내용
 
-5. Branch를 `main`, Folder를 `/ (root)`로 선택하고 저장합니다.
+- DOLPHIN 버튼 클릭 → DOLPHIN 사진
+- ATTO 3 버튼 클릭 → ATTO 3 사진
+- SEAL 버튼 클릭 → SEAL 사진
+- SEALION 7 버튼 클릭 → SEALION 7 사진
+- SEALION 6 버튼 클릭 → SEALION 6 사진
 
-6. 잠시 기다리면 사이트 주소가 생성됩니다.
-   - 예: `https://깃허브아이디.github.io/mingyu-card/`
+차량 버튼은 더 이상 맨 아래 계산기로 이동하지 않고, 상단 차량 사진과 제목을 바꿉니다.
 
-## 핸드폰 바탕화면에 앱처럼 추가하는 법
+## 업로드 후에도 예전 화면이 보일 때
 
-### 아이폰 Safari
-1. 사이트 접속
-2. 공유 버튼
-3. `홈 화면에 추가`
+사이트 주소 뒤에 `?v=3`을 붙여서 한 번 접속하세요.
 
-### 안드로이드 Chrome
-1. 사이트 접속
-2. 오른쪽 위 점 세 개
-3. `홈 화면에 추가` 또는 `앱 설치`
+예:
+`https://아이디.github.io/저장소이름/?v=3`
 
-## 현재 반영된 정보
-- 이름: 김민규 주임
-- 전화번호: 010-2783-3820
-- 이메일: mingyu.kim01@dtnetworks.co.kr
-- 블로그: https://blog.naver.com/min-_2628
-- 카카오톡 오픈채팅: https://open.kakao.com/o/saAl28wi
-
-## 수정할 때
-- 이름/전화번호/이메일은 `index.html`, `script.js`에 들어 있습니다.
-- 디자인 색상과 여백은 `style.css`에서 수정합니다.
-- 명함 이미지는 `assets/business-card.png`를 같은 이름으로 교체하면 됩니다.
-- 차량 이미지는 `assets/dolphin.svg`를 같은 이름으로 교체하면 됩니다.
-
-
-## 추가 수정
-- Vehicle Lineup 버튼을 누르면 상단 차량 이미지와 설명이 모델별로 바뀌도록 수정했습니다.
-- 포함 이미지: DOLPHIN, ATTO 3, SEAL, SEALION 7, SEALION 6
+핸드폰 홈 화면 아이콘으로 접속 중이면 기존 아이콘을 삭제하고 다시 추가하세요.

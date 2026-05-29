@@ -1,3 +1,16 @@
+// 기존 버전에서 생긴 캐시/service worker를 지워서 GitHub Pages 수정사항이 바로 보이게 합니다.
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.getRegistrations()
+    .then((registrations) => registrations.forEach((registration) => registration.unregister()))
+    .catch(() => {});
+}
+
+if ('caches' in window) {
+  caches.keys()
+    .then((keys) => keys.forEach((key) => caches.delete(key)))
+    .catch(() => {});
+}
+
 const modelData = {
   "DOLPHIN": {
     image: "assets/dolphin.png",
@@ -161,9 +174,3 @@ function calculateSaving() {
 }
 
 setModel('DOLPHIN');
-
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./sw.js').catch(() => {});
-  });
-}
