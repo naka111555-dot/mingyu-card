@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>김민규 주임 | BYD Auto bundang Showroom</title>
+  <meta name="description" content="BYD Auto bundang Showroom 김민규 주임 모바일 명함" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page">
+    <section class="profile-card">
+      <div class="byd-watermark">BYD</div>
+      <h1>김민규 <span>주임</span></h1>
+      <p class="role">Sales</p>
+      <p>BYD Auto bundang Showroom</p>
+      <p>경기 성남시 분당구 대왕판교로 322 1층</p>
+      <p><a href="mailto:mingyu.kim01@dtnetworks.co.kr">mingyu.kim01@dtnetworks.co.kr</a></p>
+      <a class="phone" href="tel:01027833820">010 - 2783 - 3820</a>
+    </section>
+
+    <section class="quick-buttons">
+      <a href="tel:01027833820">☎ 통화하기</a>
+      <button type="button" onclick="saveContact()">👤 연락처 저장</button>
+      <a class="primary" href="assets/business-card.png" download>🖼 명함 이미지로 저장</a>
+    </section>
+
+    <section class="section car-section">
+      <div class="car-image-box">
+        <img id="carImage" src="assets/dolphin.png" alt="BYD DOLPHIN" />
+      </div>
+      <div class="car-text">
+        <p class="brand">BYD</p>
+        <h2 id="carTitle">DOLPHIN</h2>
+        <p id="carDesc">감각적인 디자인과 실용성을 겸비한 소형 해치백</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h3 class="section-title">VEHICLE LINEUP</h3>
+      <div class="lineup">
+        <button type="button" class="model-button active" data-model="DOLPHIN">DOLPHIN</button>
+        <button type="button" class="model-button" data-model="ATTO 3">ATTO 3</button>
+        <button type="button" class="model-button" data-model="SEAL">SEAL</button>
+        <button type="button" class="model-button" data-model="SEALION 7">SEALION 7</button>
+        <button type="button" class="model-button wide" data-model="SEALION 6">SEALION 6</button>
+      </div>
+    </section>
+
+    <section class="section">
+      <h3 class="section-title">BLOG & CHAT</h3>
+      <a class="link-card" href="https://blog.naver.com/min-_2628" target="_blank" rel="noopener">
+        <strong>김민규 주임 BYD 상담 블로그 ↗</strong>
+        <span>전시차 정보, 상담 안내, 시승 상담 등 확인하실 수 있습니다.</span>
+      </a>
+      <a class="link-card kakao" href="https://open.kakao.com/o/saAl28wi" target="_blank" rel="noopener">
+        <strong>카카오톡 오픈채팅 바로가기</strong>
+        <span>빠르게 상담 문의를 남기실 수 있습니다.</span>
+      </a>
+    </section>
+
+    <section class="section">
+      <div class="compare">
+        <h3>하이브리드와 EV 유지 관리비 비교</h3>
+        <small>※ 조건에 따라 실제 비용은 달라질 수 있습니다.</small>
+        <table>
+          <thead>
+            <tr>
+              <th>비교항목</th>
+              <th>하이브리드</th>
+              <th>EV</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>연간 주유/충전비</td>
+              <td>약 250만원</td>
+              <td>약 130만원</td>
+            </tr>
+            <tr>
+              <td>유지·정비비</td>
+              <td>약 35만원</td>
+              <td>약 15만원</td>
+            </tr>
+            <tr>
+              <td>소모품 교체</td>
+              <td>엔진오일 등</td>
+              <td>상대적으로 적음</td>
+            </tr>
+            <tr>
+              <td>취득세 지원</td>
+              <td>일반</td>
+              <td>세제혜택 가능</td>
+            </tr>
+            <tr>
+              <td>공영주차장</td>
+              <td>기본</td>
+              <td>할인 가능</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="saving">
+          <span>5년 보유 시 총 절감 예상액</span>
+          <strong>약 14,900,000원 + α</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="calculator">
+      <div class="calc-title">전기차 전환 비용 계산기 ▲</div>
+
+      <label>휘발유 단가 (원/L)
+        <input id="fuelPrice" type="number" value="2000" />
+      </label>
+
+      <label>연비 (km/L, 복합연비)
+        <input id="hybridEff" type="number" value="12" />
+      </label>
+
+      <label>연간 주행거리 (km)
+        <input id="yearKm" type="number" value="20000" />
+      </label>
+
+      <label>BYD 모델 선택
+        <select id="modelSelect">
+          <option value="DOLPHIN">BYD DOLPHIN</option>
+          <option value="ATTO 3">BYD ATTO 3</option>
+          <option value="SEAL">BYD SEAL</option>
+          <option value="SEALION 7">BYD SEALION 7</option>
+          <option value="SEALION 6">BYD SEALION 6</option>
+        </select>
+      </label>
+
+      <div class="period">
+        <button type="button" data-years="1">1년</button>
+        <button type="button" data-years="3">3년</button>
+        <button type="button" class="active" data-years="5">5년</button>
+      </div>
+
+      <button class="calc-button" type="button" onclick="calculateSaving()">유지비 절감액 확인</button>
+      <div class="result" id="result">입력 후 버튼을 누르면 예상 절감액이 표시됩니다.</div>
+    </section>
+
+    <section class="section">
+      <h3 class="section-title">CONTACT US</h3>
+      <div class="contact-grid">
+        <a href="tel:01027833820"><b>☎</b><span>전화상담</span></a>
+        <a href="sms:01027833820"><b>💬</b><span>문자상담</span></a>
+        <a href="mailto:mingyu.kim01@dtnetworks.co.kr"><b>✉</b><span>메일</span></a>
+        <a href="https://blog.naver.com/min-_2628" target="_blank" rel="noopener"><b>🔗</b><span>블로그</span></a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h3 class="section-title">SHOWROOM LOCATION</h3>
+      <div class="location-card">
+        <strong>📍 BYD Auto bundang Showroom</strong>
+        <p>경기 성남시 분당구 대왕판교로 322 1층</p>
+        <div class="map-buttons">
+          <button type="button" onclick="copyAddress()">주소복사</button>
+          <a class="kakao-map" href="https://map.kakao.com/?q=경기 성남시 분당구 대왕판교로 322" target="_blank" rel="noopener">카카오맵</a>
+          <a class="naver-map" href="https://map.naver.com/p/search/경기%20성남시%20분당구%20대왕판교로%20322" target="_blank" rel="noopener">네이버맵</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>BYD · DT NETWORKS · BUNDANG</footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
